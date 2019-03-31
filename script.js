@@ -20,6 +20,7 @@ function loadinganm() {
 				.to(icon, 2, {ease: Power2.easeInOut, y: 0})	
 				.to(icon, 0, {margin: 'auto'});
 	} else {
+		console.log("loading...")
 		TweenMax.to(loading, 3, {rotation:"+=360"})
 		setTimeout(loadinganm, 500);
 	}
@@ -31,6 +32,7 @@ window.addEventListener('load', ()=>  {
 	var long;
 	var lati;
 	if(navigator.geolocation){
+		console.log("checking coördinats")
 		navigator.geolocation.getCurrentPosition(position => {
 			long = position.coords.longitude;
 			lati = position.coords.latitude;
@@ -107,8 +109,9 @@ function checkForDrink (type) {
 			checkDrink();
 		});
 	}	
+
 	function checkDrink() {
-		let api2 = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location='+ lati + long +'&radius=1500&type='+ type  +'&key=AIzaSyA-X4c0IpCt5uA35U3_8pSuedt9o3ETgeM';
+		let api2 = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=52.3794234,4.6380017&radius=1500&type=bar&key=AIzaSyA-X4c0IpCt5uA35U3_8pSuedt9o3ETgeM';
 		fetch(api2)
 			.then(response => {
 			return respone.json();
