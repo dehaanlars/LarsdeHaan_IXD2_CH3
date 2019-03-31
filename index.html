@@ -8,17 +8,80 @@
       	<link rel="stylesheet" type="text/css" href="style.css">
       	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>  			
 	</head>
-	<body>
-		<div class="location"> 
-			<h1 class="location-timezone">Timezone</h1>
-			<p>icon</p>			
-		</div> 		
-		<div class="temperature">
-			<h2 class="temperasture-degree">34</h2>
-			<div class="temperature-describtion">
-			Its friggin cold
+	<body onload="startTime()">
+		<div id="loadingdiv">
+			<img id="spacexloading" src="Icons/spacexblack.png"/>
+			<img id="loading" src="Icons/loading.svg"/>
+		</div>	
+		<div class="wrapper" id="wrapper">
+			<svg id="background" data-name="Laag 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="210mm" height="297mm" viewBox="0 0 595.28 841.89">
+ 			<defs>
+    			<linearGradient id="backgradient" data-name="Naamloos verloop 4" x1="-61.65" y1="780.24" x2="656.93" y2="61.65" gradientUnits="userSpaceOnUse">
+	      			<stop id="gradientcolor1" offset="0" stop-color="#54baa7"/>
+	      			<stop id="gradientcolor2" offset="1" stop-color="#252450"/>
+    			</linearGradient>
+  			</defs>
+		  	<title>gradient</title>
+		  	<rect width="595.28" height="841.89" opacity="0.85" fill="url(#backgradient)"/>
+			</svg>
+			<div id="home">
+				<img src="Icons/spacex.png"/>
+				<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"viewBox="0 0 27.02 27.02" style="enable-background:new 0 0 27.02 27.02;" xml:space="preserve">
+					<g>
+						<path style="fill:#FFFFFF;" d="M3.674,24.876c0,0-0.024,0.604,0.566,0.604c0.734,0,6.811-0.008,6.811-0.008l0.01-5.581
+							c0,0-0.096-0.92,0.797-0.92h2.826c1.056,0,0.991,0.92,0.991,0.92l-0.012,5.563c0,0,5.762,0,6.667,0
+							c0.749,0,0.715-0.752,0.715-0.752V14.413l-9.396-8.358l-9.975,8.358C3.674,14.413,3.674,24.876,3.674,24.876z"/>
+						<path style="fill:#FFFFFF;" d="M0,13.635c0,0,0.847,1.561,2.694,0l11.038-9.338l10.349,9.28c2.138,1.542,2.939,0,2.939,0
+							L13.732,1.54L0,13.635z"/>
+						<polygon style="fill:#FFFFFF;" points="23.83,4.275 21.168,4.275 21.179,7.503 23.83,9.752 	"/>
+					</g>
+				</svg>
+				<h1>Dashboard</h1>
+			</div>	
+			<div class="weather">
+				<h1 id="tempature">21C</h1>
+				<img id="weathericon" src="Icons/sun.svg"/>
+				<h2 id="location">Amsterdam<br>Nederland</h2>
+				<div id="wind">
+					<h2 id="windNSWE">ZW</h2>
+					<svg id="winddirection" data-name="Laag 1" xmlns="http://www.w3.org/2000/svg" width="41.84mm" height="82.65mm" viewBox="0 0 118.6 234.28">
+					  <path d="M333.79,553c-2.36-3.07-23.11-29.19-59.12-29.27-36.23-.09-57.16,26.24-59.48,29.27q29.64-117.13,59.3-234.27Q304.15,435.9,333.79,553Z" transform="translate(-215.19 -318.76)" fill="#fff"/>
+					</svg>
+				</div>	
+
+			</div>	
+			<div class="beercheck">
+				<button onclick="barButton()" type="button" id="barButton">Bar</button>
+				<button onclick="restaurantButton()" type="button" id="restaurantButton">Restaurant</button>
+				<button onclick="supermarketButton()" type="button" id="supermarketButton">Supermarket</button>
 			</div>
-		</div>	 
+			<div class="topplaces">
+				<h2>Top places to visit after landing</h2>
+				<ol>
+					<li id="toplanding1"></li>
+					<li id="toplanding2"></li>
+					<li id="toplanding3"></li>
+					<li id="toplanding4"></li>
+					<li id="toplanding5"></li>
+				</ol>	
+			</div>	
+			<div class="landingcheck">
+				<ul>
+					<li id="weathercheck">
+						<img src="Icons/success.svg"/>
+						<h2>Weather</h2>
+					</li>
+					<li id="">
+						<img src="Icons/success.svg"/>
+						<h2></h2>
+					</li>
+					<li id="">
+						<img src="Icons/success.svg"/>
+						<h2></h2>
+					</li>
+				</ul>	
+			</div>
+		</div> 	
 	<script src="script.js"></script>   
 	</body>
 </html>

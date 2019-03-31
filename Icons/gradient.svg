@@ -1,0 +1,10 @@
+ <svg id="Laag_1" data-name="Laag 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="210mm" height="297mm" viewBox="0 0 595.28 841.89">
+  <defs>
+    <linearGradient id="backgradient" data-name="Naamloos verloop 4" x1="-61.65" y1="780.24" x2="656.93" y2="61.65" gradientUnits="userSpaceOnUse">
+      <stop id="gradientcolor1" offset="0" stop-color="#54baa7"/>
+      <stop id="gradientcolor2" offset="1" stop-color="#252450"/>
+    </linearGradient>
+  </defs>
+  <title>gradient</title>
+  <rect width="595.28" height="841.89" fill="url(#Naamloos_verloop_4)"/>
+</svg>
