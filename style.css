@@ -14,6 +14,10 @@ body {
 	grid-template-rows: 1fr 1fr;
 }
 
+#background {
+	width: 100vh;
+}
+
 #loadingdiv img {
 	height: 5vh;
 	margin: 3vh auto 3vh auto;

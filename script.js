@@ -44,7 +44,7 @@ window.addEventListener('load', ()=>  {
 
 	function checkTemp() {
 		console.log("longitude: " +long+ " latitude: " +lati+ " acquired");
-		let api = 'https://api.openweathermap.org/data/2.5/weather?lat='+lati+'&lon='+long+'&units=metric&APPID=' +apikeyweather;
+		let api = 'https://api.openweathermap.org/data/2.5/weather?lat='+lati+'&lon='+long+'&units=metric&APPID=d0dd4871ed99313070f4b3cddec9c089';
 		let icon = document.getElementById("weathericon");
 		let landingcheck1 = false;
 
@@ -146,7 +146,7 @@ function checkForDrink (type) {
 	}	
 
 	function checkDrink() {
-		let api2 = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=52.3794234,4.6380017&radius=1500&type=bar&key=' +apikeygoogle;
+		let api2 = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=52.3794234,4.6380017&radius=1500&type=bar&key=AIzaSyA-X4c0IpCt5uA35U3_8pSuedt9o3ETgeM';
 		fetch(api2)
 			.then(response => {
 			return respone.json();
