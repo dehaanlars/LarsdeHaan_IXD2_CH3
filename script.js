@@ -1,4 +1,6 @@
 var stop = false;
+var apikeygoogle = config.googleapikey;
+var apikeyweather = config.weatherapikey;
 
 function loadinganm() {
 	let logo = document.getElementById("spacexloading");
@@ -42,8 +44,10 @@ window.addEventListener('load', ()=>  {
 
 	function checkTemp() {
 		console.log("longitude: " +long+ " latitude: " +lati+ " acquired");
-		let api = 'https://api.openweathermap.org/data/2.5/weather?lat='+lati+'&lon='+long+'&units=metric&APPID=d0dd4871ed99313070f4b3cddec9c089';
+		let api = 'https://api.openweathermap.org/data/2.5/weather?lat='+lati+'&lon='+long+'&units=metric&APPID=' +apikeyweather;
 		let icon = document.getElementById("weathericon");
+		let landingcheck1 = false;
+
 		fetch(api)
 			.then(response => {
 				return response.json();
@@ -56,6 +60,27 @@ window.addEventListener('load', ()=>  {
 				let windNSWE = document.getElementById("windNSWE");
 				let windrot = data.wind.deg;
 				let windspeed = data.wind.speed;
+				let icondata = data.weather[0].main;
+				let icon = document.getElementById("weathericon");
+
+				if (icondata == "Clear") {
+					icon.src="Icons/weatherIcon/sun.svg";
+					landingcheck1 = true;
+				} else if (icondata == "Clouds") {
+					icon.src="Icons/weatherIcon/cloudy.svg";
+					landingcheck1 = true;
+				} else if (icondata == "Snow") {
+					icon.src="Icons/weatherIcon/snowflake.svg";
+				} else if (icondata == "Rain") {
+					icon.src="Icons/weatherIcon/rainy.svg";
+				} else if (icondata == "Drizzle") {
+					icon.src="Icons/weatherIcon/cloudy.svg";
+					landingcheck1 = true;
+				} else if (icondata == "Thunderstorm") {
+					icon.src="Icons/weatherIcon/thunder.svg";
+				} 
+
+
 				if (windrot <= 22.5 && windrot >= 0 || windrot <= 359.99 && windrot >=337.5) {
 					windNSWE.innerHTML = windspeed + "m/s N";
 				} else if (windrot >= 22.6 && windrot <= 67.5){
@@ -76,6 +101,16 @@ window.addEventListener('load', ()=>  {
 					windNSWE.innerHTML = windspeed + "m/s no direction";
 				}
 				TweenMax.to(winddr, 3, {rotation: windrot})
+
+				let checkicon1 = document.getElementById("forecast");
+				let checkicon2 = document.getElementById("windcheck");
+
+				if (windspeed < 12 && landingcheck1 == true) {
+					checkicon1.src="Icons/success.svg";
+					checkicon2.src="Icons/success.svg";
+					document.getElementById("clearedforlanding").innerHTML = "Cleared for landing";
+				}
+
 				stop = true;
 			});
 		setTimeout(checkTemp, 600000);
@@ -111,7 +146,7 @@ function checkForDrink (type) {
 	}	
 
 	function checkDrink() {
-		let api2 = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=52.3794234,4.6380017&radius=1500&type=bar&key=AIzaSyA-X4c0IpCt5uA35U3_8pSuedt9o3ETgeM';
+		let api2 = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=52.3794234,4.6380017&radius=1500&type=bar&key=' +apikeygoogle;
 		fetch(api2)
 			.then(response => {
 			return respone.json();

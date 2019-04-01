@@ -14,7 +14,7 @@
 			<img id="loading" src="Icons/loading.svg"/>
 		</div>	
 		<div class="wrapper" id="wrapper">
-			<svg id="background" data-name="Laag 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="210mm" height="297mm" viewBox="0 0 595.28 841.89">
+			<svg id="background" data-name="Laag 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 595.28 841.89">
  			<defs>
     			<linearGradient id="backgradient" data-name="Naamloos verloop 4" x1="-61.65" y1="780.24" x2="656.93" y2="61.65" gradientUnits="userSpaceOnUse">
 	      			<stop id="gradientcolor1" offset="0" stop-color="#54baa7"/>
@@ -22,7 +22,7 @@
     			</linearGradient>
   			</defs>
 		  	<title>gradient</title>
-		  	<rect width="595.28" height="841.89" opacity="0.85" fill="url(#backgradient)"/>
+		  	<rect width="100vw" height="100vh" opacity="0.85" fill="url(#backgradient)"/>
 			</svg>
 			<div id="home">
 				<img src="Icons/spacex.png"/>
@@ -40,7 +40,7 @@
 			</div>	
 			<div class="weather">
 				<h1 id="tempature">21C</h1>
-				<img id="weathericon" src="Icons/sun.svg"/>
+				<img id="weathericon" src=""/>
 				<h2 id="location">Amsterdam<br>Nederland</h2>
 				<div id="wind">
 					<h2 id="windNSWE">ZW</h2>
@@ -49,6 +49,23 @@
 					</svg>
 				</div>	
 
+			</div>
+			<div class="landingcheck">
+				<ul>
+					<li id="weathercheck">
+						<img id="forecast" src="Icons/success.svg"/>
+						<h2>Weather</h2>
+					</li>
+					<li id="">
+						<img id="windcheck" src="Icons/success.svg"/>
+						<h2>Wind</h2>
+					</li>
+					<li id="">
+						<img src="Icons/success.svg"/>
+						<h2>Beer</h2>
+					</li>
+				</ul>
+				<h1 id="clearedforlanding"></h1>	
 			</div>	
 			<div class="beercheck">
 				<h2>Make a choice</h2>
@@ -66,23 +83,8 @@
 					<li id="toplanding5"></li>
 				</ol>	
 			</div>	
-			<div class="landingcheck">
-				<ul>
-					<li id="weathercheck">
-						<img src="Icons/success.svg"/>
-						<h2>Weather</h2>
-					</li>
-					<li id="">
-						<img src="Icons/success.svg"/>
-						<h2></h2>
-					</li>
-					<li id="">
-						<img src="Icons/success.svg"/>
-						<h2></h2>
-					</li>
-				</ul>	
-			</div>
 		</div> 	
-	<script src="script.js"></script>   
+		<script type='text/javascript' src='config.js'></script>
+		<script src="script.js"></script>   
 	</body>
 </html>
