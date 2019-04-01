@@ -1,6 +1,4 @@
 var stop = false;
-var apikeygoogle = config.googleapikey;
-var apikeyweather = config.weatherapikey;
 
 function loadinganm() {
 	let logo = document.getElementById("spacexloading");
